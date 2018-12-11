@@ -82,5 +82,6 @@ def predict(test):
     get_index = [i for i, x in enumerate(pred_y[0]) if x]
     disease_labels_predicted = [all_labels[i] for i in get_index]
     if len(disease_labels_predicted) == 0:
-        disease_labels_predicted = ['Healthy']
+        import random
+        disease_labels_predicted = [random.choice(all_labels)]
     return disease_labels_predicted
